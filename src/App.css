@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: inherit;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin-top: 10px;
+  display: block;
+  max-width: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.prada-logo {
+  padding-left: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  float: left;
+}
+.nav-menu-area {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 10px;
+  font-weight: bold;
+  padding-top: 5px;
+}
+.menu {
+  display: flex;
+  list-style-type: none;
+}
+.menu li a {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+}
+.user-btn {
+  display: flex;
+  margin-left: auto;
+  margin-right: 10px;
+}
+.search-box {
+  margin-right: 5px;
+}
+.card-title-a {
+  font-weight: bold;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
+  padding-top: 30px;
+}
+.card-title-b {
+  text-decoration: underline;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding-top: 40px;
+}
+.card-title-c {
+  margin-top: 230px;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  border: none !important;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product-detail-img {
+  display: flex;
+  justify-content: flex-end;
+}
+.product-info {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.drop-down {
+  margin-top: 20px;
+}
+
+.add-button {
+  margin-top: 20px;
+  width: 100%;
 }

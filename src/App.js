@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import ProductAll from "./page/ProductAll";
+import PrivateRoute from "./routes/PrivateRoute";
+import Login from "./page/Login";
+import ProductDetail from "./page/ProductDetail";
+
+// npx json-server --watch db.json --port 4000
+// npm start
+// 참고 : 코딩알려주는누나 리액트 강의
 
 function App() {
+  let [authenticate, setAuthenticate] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />
+      <Routes>
+        <Route path="/" element={<ProductAll />} />
+        <Route
+          path="/login"
+          element={<Login setAuthenticate={setAuthenticate} />}
+        />
+
+        <Route
+          path="/product"
+          element={<PrivateRoute authenticate={authenticate} />}
+        />
+        <Route path="/product/:id" element={<ProductDetail />} />
+      </Routes>
     </div>
   );
 }
